@@ -25,4 +25,14 @@
 //changes in packg file inside "scripts": { "start": "nodemon index.js"
 
 
-//next pass a msg on server
+//next create a server
+
+//realtime msging start
+
+//creating rauter
+
+//server is up an running
+
+//connecting user and disconnecting user
+
+//creating front end part for client
