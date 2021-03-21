@@ -17,6 +17,11 @@ export class Login extends React.Component {
 
   }
 
+   login=()=>{
+    alert("Hello");
+    localStorage.setItem('bool','true');
+  }
+
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
@@ -38,7 +43,7 @@ export class Login extends React.Component {
           </div>
         </div>
         <div className="footer">
-        <Link onClick={e => (!this.state.name || !this.state.room) ? e.preventDefault() : null} to={`/chat?name=${this.state.name}&room=${this.state.room}`}>
+        <Link onClick={e => (!this.state.name || !this.state.room) ? e.preventDefault() : this.login()} to={`/chat?name=${this.state.name}&room=${this.state.room}`}>
           <button className="btn" type="submit">
             Login
           </button>

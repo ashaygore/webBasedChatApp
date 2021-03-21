@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
+import { Redirect } from 'react-router-dom'
 
 
-import {InfoBar} from '../InfoBar/InfoBar';
-import {Input} from '../Input/Input';
-import {Messages} from '../Messages/Messages';
-import {TextContainer} from '../TextContainer/TextContainer'
+import { InfoBar } from '../InfoBar/InfoBar';
+import { Input } from '../Input/Input';
+import { Messages } from '../Messages/Messages';
+import { TextContainer } from '../TextContainer/TextContainer'
 
 import './Chat.css';
 
@@ -17,51 +18,60 @@ export const Chat = ({ location }) => {
   const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
+  const [redirect, setRedirect] = useState(false);
+
   const [messages, setMessages] = useState([]);
   const ENDPOINT = 'http://localhost:5000/';
 
-
   useEffect(() => {
-    const { name, room } = queryString.parse(location.search);
+    const { n, r } = queryString.parse(location.search);
+    // if(!name || !room){return(<Redirect to="/" />)};
+    setRoom(r);
+    setName(n);
 
     socket = io(ENDPOINT);
 
-    setRoom(room);
-    setName(name)
+
 
     socket.emit('join', { name, room }, (error) => {
-      if(error) {
+      if (error) {
         alert(error);
+        setRedirect(true);
       }
     });
   }, [ENDPOINT, location.search]);
-  
+
   useEffect(() => {
     socket.on('message', message => {
-      setMessages(msgs => [ ...msgs, message ]);
+      setMessages(msgs => [...msgs, message]);
     });
-    
+
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
-}, []);
+  }, []);
 
   const sendMessage = (event) => {
     event.preventDefault();
 
-    if(message) {
+    if (message) {
       socket.emit('sendMessage', message, () => setMessage(''));
     }
   }
 
 
+  if (redirect) {
+    return <Redirect push to="/" />;
+  }
+
+
   return (
     <div className="outerContainer">
-    <TextContainer users={users} />
+      <TextContainer users={users} />
       <div className="container">
-          <InfoBar room={room} />
-          <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+        <InfoBar room={room} />
+        <Messages messages={messages} name={name} />
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
     </div>
   );
