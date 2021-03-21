@@ -24,16 +24,17 @@ export const Chat = ({ location }) => {
   const ENDPOINT = 'http://localhost:5000/';
 
   useEffect(() => {
-    const { n, r } = queryString.parse(location.search);
-    // if(!name || !room){return(<Redirect to="/" />)};
-    setRoom(r);
-    setName(n);
+    const { name, room } = queryString.parse(location.search);
+    if(!name||!room){
+      setRedirect(true);
+    }
+    
+    setRoom(room);
+    setName(name);
 
     socket = io(ENDPOINT);
 
-
-
-    socket.emit('join', { name, room }, (error) => {
+    socket.emit('join', { name,room }, (error) => {
       if (error) {
         alert(error);
         setRedirect(true);
@@ -42,8 +43,8 @@ export const Chat = ({ location }) => {
   }, [ENDPOINT, location.search]);
 
   useEffect(() => {
-    socket.on('message', message => {
-      setMessages(msgs => [...msgs, message]);
+    socket.on('message', mes => {
+      setMessages(msgs => [...msgs, mes]);
     });
 
     socket.on("roomData", ({ users }) => {

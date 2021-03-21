@@ -18,7 +18,6 @@ export class Login extends React.Component {
   }
 
    login=()=>{
-    alert("Hello");
     localStorage.setItem('bool','true');
   }
 
