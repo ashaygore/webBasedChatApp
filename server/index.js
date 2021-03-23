@@ -10,28 +10,8 @@ const io = socketio(server);
 app.use(express.json());
 app.use(cors());
 app.use(router);
-const {OAuth2Client} = require('google-auth-library');
-const CLIENT_ID='1037416732496-s63mlvhg3pbb5dnnsmfegnluip12tmj4.apps.googleusercontent.com';
 
-app.post('/googlelogin',async (req,res)=>{
-  const client = new OAuth2Client(CLIENT_ID);
-  
-  let payload;
-  async function verify() {
-    const ticket = await client.verifyIdToken({
-        idToken: req.body.token,
-        audience: CLIENT_ID
-    });
-     payload = ticket.getPayload();
-    return (payload.email_verified);
-  }
-  let emailV=await verify().catch(console.error);
 
-if(emailV){
-  console.log(emailV);
-  res.send({reply:emailV});
-}
-})
 
 io.on('connect', (socket) => {
   socket.on('join', ({ name, room }, callback) => {
