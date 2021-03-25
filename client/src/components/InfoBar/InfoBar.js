@@ -12,7 +12,7 @@ export const InfoBar = ({ room }) => (
       <h3>{room}</h3>
     </div>
     <div className="rightInnerContainer">
-      <a href="/"><img src={closeIcon} alt="close icon" /></a>
+      <a href="/" onClick={()=>{localStorage.setItem('bool','false')}}><img src={closeIcon} alt="close icon" /></a>
     </div>
   </div>
 );
