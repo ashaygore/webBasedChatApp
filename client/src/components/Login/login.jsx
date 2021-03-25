@@ -23,19 +23,19 @@ export class Login extends React.Component {
   render() {
     return (
       <div className="base-container" >
-        <div className="header">ASAA Messenger</div>
-        <div className="image1"> <img src={loginImg2} alt='No-Value'/></div>
+        {/* <div className="image1"> <img src={loginImg2} alt='No-Value'/></div> */}
         <div className="content">
           <div className="image2">
             <img src={loginImg} alt='No-Value'/>
           </div>
+          <div className="header">ASAA Messenger</div>
           <div className="form">
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">UserName</label>
               <input type="text" onChange={this.changeHandler} name="name" value={this.state.name} placeholder="username" />
             </div>
-            <div className="form-group">
-              <label htmlFor="roomname">Room Name</label>
+            <div className="form-group2">
+              <label htmlFor="roomname">RoomName</label>
               <input type="text" name="room" onChange={this.changeHandler} value={this.state.room} placeholder="roomname" />
             </div>
           </div>

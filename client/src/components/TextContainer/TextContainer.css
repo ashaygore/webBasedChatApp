@@ -1,21 +1,22 @@
 .textContainer {
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
-    color: white;
-    height: 80%;
+    margin-right: 50px;
+    color: rgba(255, 217, 0, 0.671);
+    height: 85%;
     justify-content: space-between;
   }
   
   .activeContainer {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50%;
+    /* display: flex; */
+    align-items:center;
+    margin-bottom: 80%;
   }
   
   .activeItem {
     display: flex;
     align-items: center;
+    padding-left: 10px;
   }
   
   .activeContainer img {
