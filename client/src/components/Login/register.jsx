@@ -2,9 +2,7 @@ import React from "react";
 import loginImg from "../../instructions.PNG";
 
 export class Register extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+ 
 
   render() {
     return (
@@ -12,9 +10,9 @@ export class Register extends React.Component {
         <div className="header">Welcome to Chat App</div>
         <div className="content">
           <div className="image2">
-            <img src={loginImg} />
+            <img src={loginImg} alt='No-Value'/>
           </div>
-          <p > <b>To Create a New Room</b></p> 
+          <p > <b>To Create a New Room</b></p>
           <ul>
             <li>Enter Your Name.</li>
             <li>Enter a room name of your choice</li>
@@ -27,12 +25,7 @@ export class Register extends React.Component {
             <li>Enter the roomname you want to join</li>
             <li>Click on Join button</li>
           </ul>
-
-          
-            
-          
         </div>
-        
       </div>
     );
   }

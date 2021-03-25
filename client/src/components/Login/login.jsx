@@ -19,16 +19,15 @@ export class Login extends React.Component {
   login = () => {
     localStorage.setItem('bool', 'true');
   }
-
   
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
         <div className="header">ASAA Messenger</div>
-        <div className="image1"> <img src={loginImg2} /></div>
+        <div className="image1"> <img src={loginImg2} alt='No-Value'/></div>
         <div className="content">
           <div className="image2">
-            <img src={loginImg} />
+            <img src={loginImg} alt='No-Value'/>
           </div>
           <div className="form">
             <div className="form-group">

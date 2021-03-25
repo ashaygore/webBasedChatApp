@@ -31,7 +31,6 @@ class App extends React.Component {
   render() {
     const { isLogginActive } = this.state;
     const current = isLogginActive ? "Instructions" : "Login";
-    const currentActive = isLogginActive ? "login" : "register";
     return (
       <div className="App">
         <div className="login">
@@ -45,7 +44,6 @@ class App extends React.Component {
           </div>
           <RightSide
             current={current}
-            currentActive={currentActive}
             containerRef={ref => (this.rightSide = ref)}
             onClick={this.changeState.bind(this)}
           />
