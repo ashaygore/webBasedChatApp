@@ -22,7 +22,7 @@ export class Login extends React.Component {
   
   render() {
     return (
-      <div className="base-container" ref={this.props.containerRef}>
+      <div className="base-container" >
         <div className="header">ASAA Messenger</div>
         <div className="image1"> <img src={loginImg2} alt='No-Value'/></div>
         <div className="content">

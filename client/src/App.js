@@ -17,7 +17,6 @@ class App extends React.Component {
 
   changeState() {
     const { isLogginActive } = this.state;
-
     if (isLogginActive) {
       this.rightSide.classList.remove("right");
       this.rightSide.classList.add("left");
@@ -36,10 +35,10 @@ class App extends React.Component {
         <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
             {isLogginActive && (
-              <Login containerRef={ref => (this.current = ref)} />
+              <Login/>
             )}
             {!isLogginActive && (
-              <Register containerRef={ref => (this.current = ref)} />
+              <Register/>
             )}
           </div>
           <RightSide
