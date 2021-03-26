@@ -21,7 +21,7 @@ export const Chat = ({ location }) => {
   const [redirect, setRedirect] = useState(false);
 
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'http://localhost:5000/';
+  const ENDPOINT = 'https://fierce-temple-65065.herokuapp.com/';
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -31,7 +31,7 @@ export const Chat = ({ location }) => {
     
     setRoom(room);
     setName(name);
-
+	
     socket = io(ENDPOINT);
 
     socket.emit('join', { name,room }, (error) => {
@@ -41,6 +41,8 @@ export const Chat = ({ location }) => {
       }
     });
   }, [ENDPOINT, location.search]);
+  
+ 
 
   useEffect(() => {
     socket.on('message', mes => {
@@ -60,10 +62,11 @@ export const Chat = ({ location }) => {
     }
   }
 
-
-  if (redirect) {
+ if (redirect) {
     return <Redirect push to="/" />;
   }
+
+  
 
 
   return (
