@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4622d84c.chunk.css",
+    "main.js": "/static/js/main.0b88c839.chunk.js",
+    "main.js.map": "/static/js/main.0b88c839.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/css/2.fa349ff9.chunk.css": "/static/css/2.fa349ff9.chunk.css",
+    "static/js/2.f307bb10.chunk.js": "/static/js/2.f307bb10.chunk.js",
+    "static/js/2.f307bb10.chunk.js.map": "/static/js/2.f307bb10.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.00b476a70429d10fb7965ea9378cf6b4.js": "/precache-manifest.00b476a70429d10fb7965ea9378cf6b4.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.fa349ff9.chunk.css.map": "/static/css/2.fa349ff9.chunk.css.map",
+    "static/css/main.4622d84c.chunk.css.map": "/static/css/main.4622d84c.chunk.css.map",
+    "static/js/2.f307bb10.chunk.js.LICENSE.txt": "/static/js/2.f307bb10.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/static/media/bg_image.4c280cb4.jpg",
+    "static/media/Chat.css": "/static/media/chat_bg1.13841cea.jpg",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/login.svg": "/static/media/login.9a76e74e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/css/2.fa349ff9.chunk.css",
+    "static/js/2.f307bb10.chunk.js",
+    "static/css/main.4622d84c.chunk.css",
+    "static/js/main.0b88c839.chunk.js"
+  ]
+}

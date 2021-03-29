@@ -1,0 +1,40 @@
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    color: rgba(255, 217, 0, 0.671);
+    height: 85%;
+    justify-content: space-between;
+  }
+  
+  .activeContainer {
+    
+    align-items:center;
+    margin-bottom: 80%;
+  }
+  
+  .activeItem {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+  
+  .activeContainer img {
+    padding-left: 10px;
+  }
+  
+  .textContainer h1 {
+    margin-bottom: 0px;
+  }
+  
+  @media (max-width: 425px) and (max-width: 1200px) {
+    .textContainer {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .textContainer {
+        font-size: 20px;
+    }
+  }
