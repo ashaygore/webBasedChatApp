@@ -41,24 +41,23 @@ export const Chat = ({ location }) => {
       }
     });
   }, [ENDPOINT, location.search]);
-  
- 
 
   useEffect(() => {
     socket.on('message', mes => {
       setMessages(msgs => [...msgs, mes]);
-    });
+       });
 
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
+    
   }, []);
 
   const sendMessage = (event) => {
     event.preventDefault();
 
     if (message) {
-      socket.emit('sendMessage', message+"\t"+new Date().toTimeString().split(" ")[0], () => setMessage(''));
+      socket.emit('sendMessage', message+" "+new Date().toTimeString().split(" ")[0], () => setMessage(''));
     }
   }
 
@@ -66,7 +65,7 @@ export const Chat = ({ location }) => {
     return <Redirect push to="/" />;
   }
 
-  
+
 
 
   return (

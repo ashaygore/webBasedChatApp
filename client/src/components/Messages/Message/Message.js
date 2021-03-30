@@ -8,7 +8,17 @@ export const Message = ({message: { user, text }, name}) => {
     let isSentByCurrentUser = false;
     
     const trimmedName = name.trim().toLowerCase()
-
+    
+    let x=text;
+     x=x.split(" ");
+    
+    let y=x.splice(x.length-1,1);
+    let str=x[0];
+    for (let z=1;z<x.length;z++){
+        str+=" "+x[z];
+    }
+    
+	
     if(user === trimmedName) {
         isSentByCurrentUser = true
     }
@@ -19,7 +29,8 @@ export const Message = ({message: { user, text }, name}) => {
         <div className="messageContainer justifyEnd">
             <p className="sentText pr-10">{trimmedName}</p>
             <div className="messageBox backgroundBlue">
-                <p className="messageText colorWhite">{ReactEmoji.emojify(text)}</p>
+                <p className="messageText colorWhite">{str}<br />{y}</p>
+               
             </div>
         </div>
     )
